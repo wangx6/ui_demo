@@ -1,6 +1,48 @@
-.lqe-hdr{
-    width: 100%;
-    height: 100px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.lqe-hdr {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.lqe-top-navbar-header {
+  height: 60px;
+  background-color: #6e267b;
+  display: flex;
+}
+
+.lqe-left-top-navbar-sec {
+  width: 50%;
+  margin-top: 20px;
+  color: white;
+}
+
+.lqe-right-top-navbar-sec {
+  width: 50%;
+  float: right;
+  display: flex;
+  margin-top: 20px;
+}
+.lqe-left-sec {
+  width: 40%;
+  float: left;
+}
+.lqe-phone-link {
+  color: white;
+}
+
+.lqe-my-life-button {
+  background-color: #a440b6;
+  height: 25px;
+  width: 100px;
+  color: white;
+  font-weight: bold;
+  margin-top: -5px;
+}
+
+.lqe-right-sec:hover button.lqe-my-life-button:after {
+  content: "LOGIN";
+}
+.lqe-right-sec button.lqe-my-life-button:after {
+  content: "MyLifeDemo";
 }
