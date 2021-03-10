@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css';
+import HeaderMenu from '../HeaderMenu/HeaderMenu';
 
 export default function Header() {
     return (
@@ -13,6 +14,7 @@ export default function Header() {
                    <div className="lqe-right-sec"><button className="lqe-my-life-button" type="button"></button></div>
                 </div>
             </div>
+            <HeaderMenu></HeaderMenu>
         </div>
     )
 }
