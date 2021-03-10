@@ -1,15 +1,16 @@
 import './App.css';
-import CentrePanel from './components/Centre/CentrePanel';
 
 // components
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import CentrePanel from './components/Centre/CentrePanel';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <CentrePanel></CentrePanel>
+      <CentrePanel>
+      </CentrePanel>
       <Footer></Footer>
     </div>
   );
