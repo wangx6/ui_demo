@@ -1,0 +1,33 @@
+.lqe-centre-panel, .lqe-centre-panel__top, .lqe-centre-panel__middle, .lqe-centre-panel__bottom{
+    border: solid;
+    margin: 20px;
+}
+
+.lqe-centre-panel{
+    position: relative;
+    width: auto;
+    height: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.lqe-centre-panel__top,.lqe-centre-panel__middle,.lqe-centre-panel__bottom{
+    position: relative;
+    width :70%;
+    padding: 20px;
+}
+
+.lqe-centre-panel__top{
+    height: 10%;
+}
+
+.lqe-centre-panel__middle{
+    height: 60%;
+}
+
+.lqe-centre-panel__bottom {
+    height: 10%;
+}
