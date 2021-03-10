@@ -5,7 +5,6 @@ import HeaderMenu from '../HeaderMenu/HeaderMenu';
 export default function Header() {
     return (
         <div className="lqe-hdr">
-            <HeaderMenu></HeaderMenu>
             <div className='lqe-top-navbar-header'>
                 <div className="lqe-left-top-navbar-sec">
                 LIFE DEMO
@@ -15,6 +14,7 @@ export default function Header() {
                    <div className="lqe-right-sec"><button className="lqe-my-life-button" type="button"></button></div>
                 </div>
             </div>
+            <HeaderMenu></HeaderMenu>
         </div>
     )
 }
