@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export default function QuoteForm({formRecord}) {
+export default function QuoteForm({formRecord, handleSubmit}) {
 
     const [record, setRecord] = useState(formRecord.inputs);
     const [errors, setErrors] = useState(formRecord.errors);
@@ -17,6 +17,8 @@ export default function QuoteForm({formRecord}) {
 
     const onClickFormSubmit = (event) => {
         console.log(record);
+        if (handleSubmit && typeof handleSubmit === 'function')
+            handleSubmit(record);
     }
 
     const onClickEmailSubmit = (event) => {
