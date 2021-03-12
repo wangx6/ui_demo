@@ -2,6 +2,7 @@ import axios from 'axios';
 
 function Quote() {
 
+
     const formRecord = {
         inputs: { 
             firstName: 'Eamonn',
@@ -15,6 +16,7 @@ function Quote() {
         }
     }
 
+    
 
     // power
     function getFormRecord() {
@@ -26,10 +28,13 @@ function Quote() {
     }
 
     async function submitQuote() {
+     
         console.log('Quote.js - ' + formRecord.inputs);
         const result = await axios.post('http://localhost:8080/quote', formRecord.inputs);
         console.log(result);
         return result;
+        
+        
     }
 
     // call api

@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import Button from "../Button/Button"
 
 export default function QuoteForm({formRecord, handleSubmit}) {
 
     const [record, setRecord] = useState(formRecord.inputs);
-    const [errors, setErrors] = useState(formRecord.errors);
 
     console.log(record);
     
-    /*
-        useEffect(() => {
-        setRecord(formRecord);
-        setErrors(errors);
-
-        }, [formRecord, errors]);
-    */
-
     const onClickFormSubmit = (event) => {
-        console.log(record);
         if (handleSubmit && typeof handleSubmit === 'function')
             handleSubmit(record);
     }
@@ -52,9 +43,7 @@ export default function QuoteForm({formRecord, handleSubmit}) {
                 <input onChange={onChangeLastName} className="form-control" value={record.lastName}  placeholder="last name" />
                 <input onChange={onChangeDob} className="form-control" value={record.dob}  placeholder="dob" />
                 <input onChange={onChangeTerm} className="form-control" value={record.term}  placeholder="term" />
-                <button onClick={onClickFormSubmit}>
-                    Get a Quote Now
-                </button>
+                <Button handleClick={onClickFormSubmit} text="Get a Quote Now"/>
             </div>
 
             <div>
@@ -64,5 +53,7 @@ export default function QuoteForm({formRecord, handleSubmit}) {
                 </button>
             </div>
         </div>
+
     )
+
 }
