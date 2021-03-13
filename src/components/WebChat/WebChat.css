@@ -1,32 +1,39 @@
-.lqe-webchat-container{
+.webchat-container{
   display: flex; 
   flex-direction: column;
-  position: sticky;
+  position: fixed;
+  right: 0;
+  bottom: 0;
   bottom: 20px;
   box-shadow: 5px 5px 20px #fff;
 }
 
-.lqe-webchat-bar{
+.webchat-panel-inner{
+  flex-direction: column;
+}
+
+.webchat-bar, .webchat-open__btn{
   height: 45px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color:#6e267b;
-}
-
-.lqe-webchat-bar-spacing{
   padding: 40px;
 }
 
-.lqe-webchat-window{
+.webchat-bar-spacing, .webchat-btn-spacing{
+  padding: 40px;
+}
+
+.webchat-window{
   flex-direction: column;
   background-color: WhiteSmoke;
   height: 300px;
   overflow-y: auto;
 }
 
-.lqe-webchat-window, .lqe-webchat-bar, .lqe-webchat-message-submit{
+.webchat-window, .webchat-bar, .webchat-open__btn, .webchat-message-submit{
   width: 400px;
   padding: 20px;
   margin-left: auto;
@@ -34,7 +41,7 @@
   flex-basis: auto;
 }
 
-.lqe-webchat-message-submit{
+.webchat-message-submit{
   justify-content: center;
   padding-bottom: 20px;
   padding-top: 20px;
@@ -44,15 +51,15 @@
   border-bottom-left-radius: 5px;
 }
 
-.lqe-webchat-toggle--hide{
+.webchat-toggle--hide{
   display: none;
 }
 
-.lqe-webchat-toggle--show{
+.webchat-toggle--show{
   display: flex;
 }
 
-.lqe-webchat-chatbubble-userA, .lqe-webchat-chatbubble-userB {
+.webchat-chatbubble-usera, .webchat-chatbubble-userb{
   border: none; 
   border-radius: 8px;
   padding: 15px;
@@ -64,47 +71,47 @@
   text-align: left;
 }
 
-.lqe-webchat-chatbubble-userA{
+.webchat-chatbubble-usera{
   background: #E8E8E8; 
   color: black;
 }
 
-.lqe-webchat-chatbubble-userB{
+.webchat-chatbubble-userb{
   background: blueviolet;
   color: white;
   align-items: center;
   display: flex;
 }
 
-.lqe-webchat-message-userA{
+.webchat-message-usera{
   align-self: flex-start; 
   flex-direction: row;
 }
 
-.lqe-webchat-message-userB{
+.webchat-message-userb{
   align-self: flex-end;
   flex-direction: row-reverse;
 }
 
-.lqe-webchat-message-userA, .lqe-webchat-message-userB{
+.webchat-message-usera, .webchat-message-userb{
   display: flex;
 }
 
-.lqe-message-input, .lqe-message-submit-btn{
+.message-input, .message-submit__btn{
   border: 0px none;
   height: 40px;
   margin: 7px;
 }
 
-.lqe-message-input{
+.message-input{
   width: 270px;
 }
 
-.lqe-message-submit-btn{
+.message-submit__btn{
   width: 40px;
 }
 
-.lqe-dot-userA, .lqe-dot-userB{
+.webchat-dot{
   height: 20px;
   width: 20px;
   background-color: #808080;
@@ -118,6 +125,6 @@ input{
   padding-left: 20px;
 } 
 
-.lqe-send-message {
+.send-message {
   color: #bbb;
 }
