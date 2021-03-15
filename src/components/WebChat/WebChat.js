@@ -16,6 +16,7 @@ export default function WebChat() {
   const chatBox = useRef(null);
 
   useEffect(() => {
+
     if(isChatBoxVisible)
       chatBox.current.scrollTop = chatBox.current.scrollHeight;
   }, [chatHistory, isChatBoxVisible]);
@@ -90,6 +91,7 @@ export default function WebChat() {
             <BsCursorFill className="send-message"></BsCursorFill>
           </button>
         </div>
+
 
       </div>
 
