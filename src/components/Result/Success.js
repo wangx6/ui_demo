@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 const Success = () => {
     const location = useLocation();
 
-    return ( <div className="lqe__success__page">
+    return ( <div className="lqe-success-page">
 Success: {location.state.detail}
     </div> );
 }
