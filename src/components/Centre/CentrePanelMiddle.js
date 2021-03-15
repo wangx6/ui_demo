@@ -2,11 +2,8 @@ import React from "react";
 import "./CentrePanel.css";
 import QuoteForm from "../Forms/QuoteForm";
 import Quote from "../../models/Quote/Quote";
-import { useHistory } from "react-router-dom";
 
 export default function CentrePanelMiddle() {
-  let history = useHistory();
-
   const quote = Quote();
   const formRecord = quote.getFormRecord();
 
