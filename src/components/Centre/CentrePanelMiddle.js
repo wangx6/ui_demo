@@ -2,6 +2,7 @@ import React from 'react';
 import './CentrePanel.css';
 import QuoteForm from '../Forms/QuoteForm';
 import Quote from '../../models/Quote/Quote';
+import GlobalErrorPopup from '../GlobalErrorPopup/GlobalErrorPopup';
 
 export default function CentrePanelMiddle(){
 
@@ -11,6 +12,17 @@ export default function CentrePanelMiddle(){
     async function handleSubmit(record) {
         quote.setFormRecord(record);
         const response = await quote.submitQuote();
+        
+        if (response.statusText === "OK") {
+            console.log('Response OK');
+        }
+        else if (response.statusText === "WARN") {
+            console.log('Response Warning');
+        }
+        else if (response.statusText === "ERROR") {
+            console.log('Response Error');
+        }
+
         console.log('Centre Panel Middle.js', response);
         //return
     }

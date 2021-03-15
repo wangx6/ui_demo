@@ -4,11 +4,11 @@ function Quote() {
 
     const formRecord = {
         inputs: { 
-            firstName: 'Eamonn',
-            lastName: '',
-            dob: '',
-            term: '',
-            email: ''
+            firstName: 'Kevin',
+            lastName: 'Doyle',
+            dob: '15/12/1974',
+            term: '20',
+            email: 'kevin@test.com'
         },
         errors: {
 
@@ -26,7 +26,7 @@ function Quote() {
     }
 
     async function submitQuote() {
-        console.log('Quote.js - ' + formRecord.inputs);
+        console.log(formRecord.inputs);
         const result = await axios.post('http://localhost:8080/quote', formRecord.inputs);
         console.log(result);
         return result;

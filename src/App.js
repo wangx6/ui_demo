@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import CentrePanel from './components/Centre/CentrePanel';
+import GlobalErrorPopup from './components/GlobalErrorPopup/GlobalErrorPopup';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <CentrePanel>
       </CentrePanel>
       <Footer></Footer>
+      <GlobalErrorPopup></GlobalErrorPopup>
     </div>
   );
 }
