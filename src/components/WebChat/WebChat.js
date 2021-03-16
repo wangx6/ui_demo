@@ -62,7 +62,6 @@ export default function WebChat() {
           </p>
           <BsX onClick={onClickToggleChatBox}></BsX>
         </div>
-
         <div ref={chatBox} className="lqe-wct__main__mess-list">
           {chatHistory.map((chat) => (
             <div key={chat.id} className={`lqe-wct__message__${chat.user}`}>
@@ -73,7 +72,6 @@ export default function WebChat() {
             </div>
           ))}
         </div>
-
         <div className="lqe-wct__message__input__wrap">
           <input 
             onChange={onChangeMessage} 
@@ -87,7 +85,6 @@ export default function WebChat() {
           </button>
         </div>
       </div>
-
       <div className={`lqe-wct__open-btn lqe-wct__main__toggle--${isChatBoxVisible ? "hide" : "show"}`}>
         <p className="lqe-wct__btn_s" onClick={onClickToggleChatBox}>
           Chat with us
