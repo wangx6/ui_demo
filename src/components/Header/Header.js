@@ -1,20 +1,9 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React from "react";
 import "./Header.css";
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
-import NotificationContext from "../../contexts/NotificationContext";
 
 export default function Header() {
-  const { service } = useContext(NotificationContext);
-  console.log(service);
-  const refShowNotification = useRef(service.showNotification);
-
-  useEffect(() => {
-    setTimeout(() => {
-      refShowNotification.current("OK", "this is ok", "Success");
-    }, 2000);
-  }, []);
-
   return (
     <div className="lqe-hdr">
       <div className="lqe-top-navbar-header">

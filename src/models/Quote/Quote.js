@@ -32,9 +32,16 @@ function Quote() {
         return result;
     }
 
+    async function sendEmail() {
+      console.log(formRecord.inputs.email);
+      const result = await axios.post('http://localhost:8080/quote', formRecord.inputs.email);
+        console.log(result);
+        return result;
+    }
+
     // call api
 
-    return {submitQuote, getFormRecord, setFormRecord};
+    return {submitQuote, sendEmail, getFormRecord, setFormRecord};
 }
 
 export default Quote;
