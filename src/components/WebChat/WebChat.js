@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { BsX, BsCursorFill } from "react-icons/bs";
 import { messageHistoryGenerator } from "./MessageGeneratorUtil";
 
@@ -7,14 +7,13 @@ const history = {
 };
 
 export default function WebChat() {
-  
+ 
   const [chatHistory, setChatHistory] = useState(history.messages);
   const [isChatBoxVisible, setIsChatBoxVisible] = useState(false);
   const [message, setMessage] = useState('');
   const chatBox = useRef(null);
 
   useEffect(() => {
-
     if(isChatBoxVisible)
       chatBox.current.scrollTop = chatBox.current.scrollHeight;
   }, [chatHistory, isChatBoxVisible]);
@@ -56,11 +55,8 @@ export default function WebChat() {
   }
 
   return (
-
     <div className="lqe-wct">
-
       <div className={`lqe-wct__main lqe-wct__main__toggle--${isChatBoxVisible ? "show" : "hide"}`}>
-
         <div className="lqe-wct__main__hdr">
           <p className="lqe-wct__main__hdr_text_s">How may I help you?
           </p>
@@ -90,8 +86,6 @@ export default function WebChat() {
             <BsCursorFill className="lqe-wct__message__cursor"></BsCursorFill>
           </button>
         </div>
-
-
       </div>
 
       <div className={`lqe-wct__open-btn lqe-wct__main__toggle--${isChatBoxVisible ? "hide" : "show"}`}>
@@ -99,7 +93,6 @@ export default function WebChat() {
           Chat with us
         </p>
       </div>
-
     </div>
   );
 }

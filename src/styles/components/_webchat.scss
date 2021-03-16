@@ -1,28 +1,21 @@
 @import "../common/global";
 
 .lqe-wct{
+  $box-width: 400px;
+
   position: fixed;
   right: 0;
   bottom: 0;
   bottom: 20px;
-  box-shadow: 5px 5px 20px #fff;
-
-  &__main__toggle--hide{
-    display: none;
-  }
+  box-shadow: 5px 5px 20px $white;
 
   &__main__toggle--show{
     display: flex;
     flex-direction: column;
   }
 
-  &__main__hdr,
-  &__open-btn{
-    height: 45px;
-    align-items: center;
-    justify-content: center;
-    background-color: #6e267b;
-    padding: 40px;
+  &__main__toggle--hide{
+    display: none;
   }
 
   &__main__hdr{
@@ -34,105 +27,111 @@
     padding: 40px;
   }
 
+  &__main__hdr,
+  &__open-btn{
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 40px;
+    background-color: $primary-color;
+  }
+
   &__main__mess-list,
   &__main__hdr,
   &__open-btn,
   &__message__input__wrap{
-    width: 400px;
+    width: $box-width;
     padding: 20px;
-    color: white;
+    color: $white;
   }
 
   &__main__mess-list{
     display: flex;
     flex-direction: column;
-    background-color: WhiteSmoke;
     height: 300px;
     overflow-y: auto;
+    background-color: $m-l-grey;
 
-    // Chat User A & B
-    &.message__usera{
+    .lqe-wct__message__usera{
       display: flex;
-      align-self: flex-start; 
+      align-self: flex-start;
       flex-direction: row;
     }
 
-    &.message__userb{
+    .lqe-wct__message__userb{
       display: flex;
       align-self: flex-end;
       flex-direction: row-reverse;
     }
 
+    .lqe-wct__message__usera,
+    .lqe-wct__message__userb {
+      .lqe-wct__chatbubble__usera,
+      .lqe-wct__chatbubble__userb{
+        border: none;
+        border-radius: 8px;
+        padding: 15px;
+        width: 170px;
+        min-height: 10px;
+        max-height: fit-content;
+        margin: 15px 7px 15px 7px;
+        overflow-wrap: anywhere;
+        font-size: 11px;
+        text-align: left;
+      }
+
+      .lqe-wct__chatbubble__usera{
+        background: $m-d-grey;
+        color: $black;
+      }
+
+      .lqe-wct__chatbubble__userb{
+        display: flex;
+        align-items: center;
+        background: $blue;
+        color: $white;
+      }
+
+      .lqe-wct__message__dot{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin-top: 17px;
+        background-color: $x-d-grey;
+      }
+    }
   }
 
   &__message__input__wrap{
     justify-content: center;
     padding-bottom: 20px;
     padding-top: 20px;
-    background-color: #f8f8f8;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    background: $m-l-grey;
+
+    .lqe-wct__message__input,
+    .lqe-wct__message__submit-btn{
+      border: 0px none;
+      height: 40px;
+      margin: 7px;
+    }
+
+    .lqe-wct__message__input{
+      width: 270px;
+    }
+
+    .lqe-wct__message__input_s{
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .lqe-wct__message__submit-btn{
+      width: 40px;
+    }
+
+    .lqe-wct__message__cursor{
+      color: $x-d-grey;
+    }
   }
-
-
-  &__chatbubble__usera,
-  &__chatbubble__userb{
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    width: 170px;
-    min-height: 10px;
-    max-height: fit-content;
-    margin: 15px 7px 15px 7px;
-    overflow-wrap: anywhere;
-    font-size: 11px;
-    text-align: left;
-  }
-
-  &__chatbubble__usera{
-    background: #e8e8e8;
-    color: black;
-  }
-
-  &__chatbubble__userb{
-    background: blueviolet;
-    color: white;
-    align-items: center;
-    display: flex;
-  }
-
-  //// Message Input
-  &__message__input,
-  &__message__submit-btn{
-    border: 0px none;
-    height: 40px;
-    margin: 7px;
-  }
-
-  &__message__input{
-    width: 270px;
-  }
-
-  &__message__submit-btn{
-    width: 40px;
-  }
-
-  &__message__dot{
-    height: 20px;
-    width: 20px;
-    background-color: #808080;
-    border-radius: 50%;
-    display: flex;
-    margin-top: 17px;
-  }
-
-  &__message__input_s{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  &__message__cursor{
-    color: #bbb;
-  }
-
 }
