@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { BsX, BsCursorFill } from "react-icons/bs";
 import { messageHistoryGenerator } from "./MessageGeneratorUtil";
 
@@ -9,7 +9,6 @@ const history = {
 };
 
 export default function WebChat() {
-
   const [chatHistory, setChatHistory] = useState(history.messages);
   const [isChatBoxVisible, setIsChatBoxVisible] = useState(false);
   const chatBox = useRef(null);
@@ -18,10 +17,13 @@ export default function WebChat() {
     setChatHistory(chatHistory);
   }, [chatHistory]);
 
-  useEffect((event) => {
-    if(isChatBoxVisible)
-      chatBox.current.scrollTop = chatBox.current.scrollHeight;
-  }, [chatHistory, isChatBoxVisible]);
+  useEffect(
+    (event) => {
+      if (isChatBoxVisible)
+        chatBox.current.scrollTop = chatBox.current.scrollHeight;
+    },
+    [chatHistory, isChatBoxVisible]
+  );
 
   const onClickToggleChatBox = () => setIsChatBoxVisible(!isChatBoxVisible);
 
@@ -30,11 +32,12 @@ export default function WebChat() {
   const onChangeMessage = (event) => {};
 
   return (
-
     <div className="webchat-container">
-
-      <div className={`webchat-panel-inner webchat-toggle--${isChatBoxVisible ? "show" : "hide"}`}>
-
+      <div
+        className={`webchat-panel-inner webchat-toggle--${
+          isChatBoxVisible ? "show" : "hide"
+        }`}
+      >
         <div className="webchat-bar">
           <p className="webchat-bar-spacing">How may we help you?</p>
           <BsX onClick={onClickToggleChatBox}></BsX>
@@ -52,20 +55,26 @@ export default function WebChat() {
         </div>
 
         <div className="webchat-message-submit">
-          <input onChange={onChangeMessage} className="message-input" placeholder="Enter your message"/>
+          <input
+            onChange={onChangeMessage}
+            className="message-input"
+            placeholder="Enter your message"
+          />
           <button onClick={onClickAddMessage} className="message-submit__btn">
             <BsCursorFill className="send-message"></BsCursorFill>
           </button>
         </div>
-
       </div>
 
-      <div className={`webchat-open__btn webchat-toggle--${isChatBoxVisible ? "hide" : "show"}`}>
+      <div
+        className={`webchat-open__btn webchat-toggle--${
+          isChatBoxVisible ? "hide" : "show"
+        }`}
+      >
         <p className="webchat-btn-spacing" onClick={onClickToggleChatBox}>
           Chat with us
         </p>
       </div>
-
     </div>
   );
 }
