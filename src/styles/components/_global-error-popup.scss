@@ -1,0 +1,49 @@
+.modal-scroll {
+  overflow-y: scroll;
+}
+
+.modal {
+  display: none;
+  justify-content: center;
+  overflow-y: hidden;
+  background-color: rgba(82, 73, 84, 0.71);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.lqe-global-error-popup {
+  .lqe-global-error-popup-dialog {
+    width: 760px;
+    margin-top: 15em;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 30px auto;
+    position: relative;
+
+    .lqe-global-error-popup-content {
+      border-radius: 10px;
+      position: relative;
+      background-color: #ffffff;
+      background-clip: padding-box;
+      outline: 0;
+
+      .lqe-global-error-popup-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 62px 81px;
+
+        .lqe-global-error-popup-title {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
