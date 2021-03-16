@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { BsX, BsCursorFill } from "react-icons/bs";
 import { messageHistoryGenerator } from "./MessageGeneratorUtil";
 
-import "./WebChat.css";
-
 const history = {
   messages: messageHistoryGenerator(),
 };
@@ -59,44 +57,45 @@ export default function WebChat() {
 
   return (
 
-    <div className="webchat-container">
+    <div className="lqe-wct">
 
-      <div className={`webchat-panel-inner webchat-toggle--${isChatBoxVisible ? "show" : "hide"}`}>
+      <div className={`lqe-wct__main lqe-wct__main__toggle--${isChatBoxVisible ? "show" : "hide"}`}>
 
-        <div className="webchat-bar">
-          <p className="webchat-bar-spacing">How may we help you?</p>
+        <div className="lqe-wct__main__hdr">
+          <p className="lqe-wct__main__hdr_text_s">How may I help you?
+          </p>
           <BsX onClick={onClickToggleChatBox}></BsX>
         </div>
 
-        <div id="webchat-window" ref={chatBox} className="webchat-window">
+        <div ref={chatBox} className="lqe-wct__main__mess-list">
           {chatHistory.map((chat) => (
-            <div key={chat.id} className={`webchat-message-${chat.user}`}>
-              <div className="webchat-dot"></div>
-              <div className={`webchat-chatbubble-${chat.user}`}>
+            <div key={chat.id} className={`lqe-wct__message__${chat.user}`}>
+              <div className="lqe-wct__message__dot"></div>
+              <div className={`lqe-wct__chatbubble__${chat.user}`}>
                 {chat.message}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="webchat-message-submit">
+        <div className="lqe-wct__message__input__wrap">
           <input 
             onChange={onChangeMessage} 
             onKeyUp={onKeyUpInput} value={message}
-            className="message-input" 
+            className="lqe-wct__message__input lqe-wct__message__input_s" 
             value={message}  
             placeholder="Enter your message" 
           />
-          <button onClick={onClickAddMessage} className="message-submit__btn">
-            <BsCursorFill className="send-message"></BsCursorFill>
+          <button onClick={onClickAddMessage} className="lqe-wct__message__submit-btn">
+            <BsCursorFill className="lqe-wct__message__cursor"></BsCursorFill>
           </button>
         </div>
 
 
       </div>
 
-      <div className={`webchat-open__btn webchat-toggle--${isChatBoxVisible ? "hide" : "show"}`}>
-        <p className="webchat-btn-spacing" onClick={onClickToggleChatBox}>
+      <div className={`lqe-wct__open-btn lqe-wct__main__toggle--${isChatBoxVisible ? "hide" : "show"}`}>
+        <p className="lqe-wct__btn_s" onClick={onClickToggleChatBox}>
           Chat with us
         </p>
       </div>

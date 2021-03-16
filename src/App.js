@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import './index.scss';
 
 // components
 import Header from './components/Header/Header';
@@ -20,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

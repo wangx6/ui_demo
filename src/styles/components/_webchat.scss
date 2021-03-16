@@ -1,0 +1,138 @@
+@import "../common/global";
+
+.lqe-wct{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  bottom: 20px;
+  box-shadow: 5px 5px 20px #fff;
+
+  &__main__toggle--hide{
+    display: none;
+  }
+
+  &__main__toggle--show{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main__hdr,
+  &__open-btn{
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: #6e267b;
+    padding: 40px;
+  }
+
+  &__main__hdr{
+    display: flex;
+  }
+
+  &__main__hdr_text_s,
+  &__btn_s{
+    padding: 40px;
+  }
+
+  &__main__mess-list,
+  &__main__hdr,
+  &__open-btn,
+  &__message__input__wrap{
+    width: 400px;
+    padding: 20px;
+    color: white;
+  }
+
+  &__main__mess-list{
+    display: flex;
+    flex-direction: column;
+    background-color: WhiteSmoke;
+    height: 300px;
+    overflow-y: auto;
+
+    // Chat User A & B
+    &.message__usera{
+      display: flex;
+      align-self: flex-start; 
+      flex-direction: row;
+    }
+
+    &.message__userb{
+      display: flex;
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+  }
+
+  &__message__input__wrap{
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #f8f8f8;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+
+  &__chatbubble__usera,
+  &__chatbubble__userb{
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    width: 170px;
+    min-height: 10px;
+    max-height: fit-content;
+    margin: 15px 7px 15px 7px;
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  &__chatbubble__usera{
+    background: #e8e8e8;
+    color: black;
+  }
+
+  &__chatbubble__userb{
+    background: blueviolet;
+    color: white;
+    align-items: center;
+    display: flex;
+  }
+
+  //// Message Input
+  &__message__input,
+  &__message__submit-btn{
+    border: 0px none;
+    height: 40px;
+    margin: 7px;
+  }
+
+  &__message__input{
+    width: 270px;
+  }
+
+  &__message__submit-btn{
+    width: 40px;
+  }
+
+  &__message__dot{
+    height: 20px;
+    width: 20px;
+    background-color: #808080;
+    border-radius: 50%;
+    display: flex;
+    margin-top: 17px;
+  }
+
+  &__message__input_s{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  &__message__cursor{
+    color: #bbb;
+  }
+
+}
