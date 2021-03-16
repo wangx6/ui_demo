@@ -1,4 +1,5 @@
 export const messageHistoryGenerator = () => {
+    console.log('yyy');
   var arr = [];
   var len = 100;
   for (var i = 0; i < len; i++) {
