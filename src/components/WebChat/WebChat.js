@@ -62,7 +62,7 @@ export default function WebChat() {
           </p>
           <BsX onClick={onClickToggleChatBox}></BsX>
         </div>
-        <div ref={chatBox} className="lqe-wct__main__mess-list">
+        <div ref={chatBox} className="lqe-wct__main__message-list">
           {chatHistory.map((chat) => (
             <div key={chat.id} className={`lqe-wct__message__${chat.user}`}>
               <div className="lqe-wct__message__dot"></div>

@@ -36,7 +36,7 @@
     background-color: $primary-color;
   }
 
-  &__main__mess-list,
+  &__main__message-list,
   &__main__hdr,
   &__open-btn,
   &__message__input__wrap{
@@ -45,7 +45,7 @@
     color: $white;
   }
 
-  &__main__mess-list{
+  &__main__message-list{
     display: flex;
     flex-direction: column;
     height: 300px;
@@ -65,7 +65,7 @@
     }
 
     .lqe-wct__message__usera,
-    .lqe-wct__message__userb {
+    .lqe-wct__message__userb{
       .lqe-wct__chatbubble__usera,
       .lqe-wct__chatbubble__userb{
         border: none;
