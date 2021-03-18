@@ -9,9 +9,9 @@ export default function GlobalErrorPopup() {
     <div className={`lqe-global-notification-popup ${status.toLowerCase()}`}>
       <div className="lqe-global-notification-popup__dialog">
         <div className="lqe-global-notification-popup__content">
-          <div className="lqe-global-notification-popup-body">
+          <div className="lqe-global-notification-popup__body">
             <div className="lqe-global-notification-popup__title">{title}</div>
-            <div className="lqe-global-notification-popup-description">{message}</div>
+            <div className="lqe-global-notification-popup__description">{message}</div>
           </div>
         </div>
       </div>

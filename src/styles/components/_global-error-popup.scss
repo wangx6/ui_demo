@@ -42,13 +42,13 @@
     background-clip: padding-box;
     outline: 0;
 
-    .lqe-global-notification-popup-body {
+    .lqe-global-notification-popup__body {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 48px 62px 81px;
 
-      .lqe-global-notification-popup-title {
+      .lqe-global-notification-popup__title {
         margin-bottom: 10px;
       }
     }
