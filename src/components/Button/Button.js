@@ -1,10 +1,9 @@
 import React from 'react';
-import "./Button.css"
 
 const Button = (props) => {
 
     return ( 
-    <button className="lqe__button--common" onClick={props.handleClick}>
+    <button className="lqe-button__primary" onClick={props.handleClick}>
     {props.text}
     </button> );
 }

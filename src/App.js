@@ -1,4 +1,5 @@
 import './App.css';
+import "./styles/index.scss";
 
 // components
 import Header from './components/Header/Header';
