@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BsX, BsCursorFill } from "react-icons/bs";
 import { messageHistoryGenerator } from "./MessageGeneratorUtil";
 
@@ -21,8 +21,8 @@ export default function WebChat() {
   const newMessage = () => {
 
     let users = [
-      'usera',
-      'userb',
+      'a',
+      'b',
     ];
 
     let randomUser = Math.floor(Math.random()*2);
@@ -64,9 +64,9 @@ export default function WebChat() {
         </div>
         <div ref={chatBox} className="lqe-wct__main__message-list">
           {chatHistory.map((chat) => (
-            <div key={chat.id} className={`lqe-wct__message__${chat.user}`}>
-              <div className="lqe-wct__message__dot"></div>
-              <div className={`lqe-wct__chatbubble__${chat.user}`}>
+            <div key={chat.id} className={`lqe-wct__main__message-list__message lqe-wct__main__message-list__message${chat.user}`}>
+              <div className="message__dot"></div>
+              <div className={`message__chatbubble message__chatbubble${chat.user}`}>
                 {chat.message}
               </div>
             </div>

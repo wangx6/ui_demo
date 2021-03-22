@@ -52,22 +52,9 @@
     overflow-y: auto;
     background-color: $m-l-grey;
 
-    .lqe-wct__message__usera{
+    &__message {
       display: flex;
-      align-self: flex-start;
-      flex-direction: row;
-    }
-
-    .lqe-wct__message__userb{
-      display: flex;
-      align-self: flex-end;
-      flex-direction: row-reverse;
-    }
-
-    .lqe-wct__message__usera,
-    .lqe-wct__message__userb{
-      .lqe-wct__chatbubble__usera,
-      .lqe-wct__chatbubble__userb{
+      .message__chatbubble{
         border: none;
         border-radius: 8px;
         padding: 15px;
@@ -79,25 +66,32 @@
         font-size: 11px;
         text-align: left;
       }
-
-      .lqe-wct__chatbubble__usera{
-        background: $m-d-grey;
-        color: $black;
-      }
-
-      .lqe-wct__chatbubble__userb{
-        display: flex;
-        align-items: center;
-        background: $blue;
-        color: $white;
-      }
-
-      .lqe-wct__message__dot{
+      .message__dot{
         height: 20px;
         width: 20px;
         border-radius: 50%;
         margin-top: 17px;
         background-color: $x-d-grey;
+      }
+    } 
+
+    &__messagea{
+      align-self: flex-start;
+      flex-direction: row;
+      .message__chatbubblea{
+        background: $m-d-grey;
+        color: $black;
+      }
+    }
+
+    &__messageb{
+      align-self: flex-end;
+      flex-direction: row-reverse;
+      .message__chatbubbleb{
+        display: flex;
+        align-items: center;
+        background: $blue;
+        color: $white;
       }
     }
   }
