@@ -20,8 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "scss": "node-sass --watch scss -o css",
-    "review": "git fetch --all && git checkout",
-    "lint":"eslint"
+    "review": "git fetch --all && git checkout"
   },
   "eslintConfig": {
     "extends": [
@@ -40,9 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^7.22.0",
-    "eslint-plugin-react": "^7.22.0"
   }
 }
