@@ -22,7 +22,7 @@
     display: flex;
   }
 
-  &__main__hdr_text_s,
+  &__main__hdr__text_s,
   &__btn_s{
     padding: 40px;
   }
@@ -115,7 +115,7 @@
       width: 270px;
     }
 
-    .lqe-wct__main__hdr__text__s{
+    .lqe-wct__message__input_s{
       text-align: left;
       padding-left: 20px;
     }
@@ -127,6 +127,5 @@
     .lqe-wct__message__cursor{
       color: $x-d-grey;
     }
-    
   }
 }
