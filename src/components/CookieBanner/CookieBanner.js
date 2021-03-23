@@ -21,14 +21,14 @@ export default function CookieBanner() {
             <div className={`util-cookie-banner-container util-cookie-banner-container--${isVisible ? "show" : "hide"}`}>
                 <div className='util-cookie-banner-container-hdr'>
                     <img src={VhiLogo} width='120' height='40' alt='Vhi Logo' />
-                    <CgClose onClick={hideCookieBanner}></CgClose>
+                    <CgClose className='util-cookie-banner__cookie-icon-hide' onClick={hideCookieBanner}></CgClose>
                 </div>
                 <div className='util-cookie-banner-container-content'>
                     <hr/>Cookie Banner Content
                 </div>
             </div>
             <div className='util-cookie-banner__cookie-icon'>
-                <img onClick={ShowCookieBanner} src={CookieIcon} width='35' height='35' alt='Cookie Icon' />
+                <img className='util-cookie-banner__cookie-icon-show' onClick={ShowCookieBanner} src={CookieIcon} width='35' height='35' alt='Cookie Icon' />
             </div>
             <div className={`util-cookie-banner__modal ${isVisible ? "show" : "hide"}`}></div>
         </div>
