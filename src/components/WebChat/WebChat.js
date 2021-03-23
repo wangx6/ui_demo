@@ -58,9 +58,9 @@ export default function WebChat() {
     <div className="lqe-wct">
       <div className={`lqe-wct__main lqe-wct__main__toggle--${isChatBoxVisible ? "show" : "hide"}`}>
         <div className="lqe-wct__main__hdr">
-          <p className="lqe-wct__main__hdr_text_s">How may I help you?
+          <p className="lqe-wct__main__hdr__text__s">How may I help you?
           </p>
-          <BsX onClick={onClickToggleChatBox}></BsX>
+          <BsX className="lqe-wct__main__hdr__x__icon" onClick={onClickToggleChatBox}></BsX>
         </div>
         <div ref={chatBox} className="lqe-wct__main__message-list">
           {chatHistory.map((chat) => (
