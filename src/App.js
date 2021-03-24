@@ -6,8 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import CentrePanel from './components/Centre/CentrePanel';
 
-import { BrowserRouter } from "react-router-dom";
-import { Switch, Route } from 'react-router-dom';
+import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import Success from './components/Result/Success';
 import Failure from './components/Result/Failure';
 
