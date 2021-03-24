@@ -1,3 +1,4 @@
+import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import CookieBanner from './CookieBanner';
 import Adapter17 from '@wojtekmaj/enzyme-adapter-react-17';

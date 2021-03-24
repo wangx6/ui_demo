@@ -18,15 +18,15 @@ import Failure from './components/Result/Failure';
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <BrowserRouter>  
-      <Switch>
-      <Route exact path ="/" component={CentrePanel} />
-      <Route path="/success" exact component={() => <Success/> }/>
-      <Route path="/fail" exact component={() => <Failure/> } />
-      </Switch>
+      <Header />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={CentrePanel} />
+          <Route path="/success" exact component={() => <Success />} />
+          <Route path="/fail" exact component={() => <Failure />} />
+        </Switch>
       </BrowserRouter>
-      <Footer/>
+      <Footer />
       <WebChat></WebChat>
       <CookieBanner></CookieBanner>
       <div className="lqe-wctx-p">
@@ -38,6 +38,6 @@ function App() {
       <div className="lqe-modal-mixin"></div>
     </div>
   );
-  }
+}
 
 export default App;

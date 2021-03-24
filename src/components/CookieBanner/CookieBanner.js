@@ -24,7 +24,7 @@ export default function CookieBanner() {
         </div>
         <div className='util-cookie-banner-container-content'>
           <hr />Cookie Banner Content
-                </div>
+        </div>
       </div>
       <div className='util-cookie-banner__cookie-icon'>
         <img className='util-cookie-banner__cookie-icon-show' onClick={onShowCookieBanner} src={CookieIcon} alt='Cookie Icon' />
