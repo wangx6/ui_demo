@@ -1,0 +1,70 @@
+/*
+* App Prefix
+*/
+
+$app-prefix: 'lqe';
+
+/**
+ * TYPOGRAPHY SPACE
+ */
+$primary-font: arial;
+$secondary-font: sans-serif;
+
+h1, h2, h3, p, div {
+    font-family: $primary-font;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/**
+ * COLOR SPACE
+ */
+$primary-color: #6e267b;
+$red: red;
+$blue: blue;
+$blue-violet: blueviolet;
+$black: #333;
+$white: #fff;
+$grey: #ccc;
+$x-d-grey: #999;
+$xx-d-grey: #666;
+$x-l-grey: #eee;
+$m-l-grey: #F8F8F8;
+$m-d-grey: #E8E8E8;
+$xs-l-grey: #fefefe;
+$base: $primary-color;
+//
+/**
+ * LAYOUT SPACE
+ */
+
+// SPACING
+// ### (CAUTION: USE ONLY ON PAGE LEVEL) ###
+$steps: 5px, 10px, 15px, 20px;
+@each $step in $steps {
+    .lqe-gap-t-#{$step} {
+        margin-top: $step;
+    }
+    .lqe-gap-r-#{$step} {
+        margin-right: $step;
+    }
+    .lqe-gap-b-#{$step} {
+        margin-bottom: $step;
+    }
+    .lqe-gap-l-#{$step} {
+        margin-left: $step;
+    }
+}

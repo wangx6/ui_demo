@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# text editor configs
+/vscode
+
 # testing
 /coverage
 
@@ -23,3 +26,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+
+.eslintrc.json
