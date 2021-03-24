@@ -1,90 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BsX, BsCursorFill } from "react-icons/bs";
-
-function ChatModel({ page }) {
-  const allowedPages = ["lqe"];
-  const [messages, setMessages] = useState([]);
-  const [isChatBoxAvailable, setIsChatBoxVisible] = useState(false);
-  const [isChatBoxVisible] = useState(false);
-  const [isAgentAvailable] = useState(false);
-  const [hasChatHistory] = useState(false);
-
-  // POWER SPACE
-  useEffect(() => {}, []);
-
-  function isChatAvailable() {
-    return isAgentAvailable && allowedPages.includes(page);
-  }
-
-  function isChatActive() {
-    return hasChatHistory;
-  }
-
-  function createMessageRecord(message, type) {
-    return {
-      id: Math.random().toString(32),
-      message,
-      dateTime: new Date(),
-      type,
-    };
-  }
-
-  function mockServer() {
-    return Array(25)
-      .fill()
-      .map((e, i) => {
-        return {
-          id: Math.random().toString(32),
-          dateTime: new Date(),
-          type: `${i % 2 === 0 ? "a" : "b"}`,
-          message: 'this is user speakiing this is user speaking ',
-        };
-      });
-  }
-
-  function fetchChatHistory() {
-    return new Promise((resolve, reject) => {
-      const messages = mockServer();
-      resolve(messages)
-    });
-  }
-
-  function connect() {
-    // connect to the socket server
-    // listen to the "message" event
-  }
-
-  function onMessageFromAgent(message) {
-    addMessage(message, "b");
-  }
-
-  function closeChat() {}
-
-  function addMessage(message, type) {
-    const record = createMessageRecord(message, type);
-    setMessages([...message, record]);
-  }
-
-  return {
-    messages,
-    isAgentAvailable,
-    hasChatHistory,
-    isChatBoxVisible,
-    service: {
-      connect,
-      fetchChatHistory,
-      closeChat,
-      addMessage,
-      isChatActive,
-      isChatAvailable,
-      setMessages,
-      setIsChatBoxVisible,
-    },
-  };
-}
+import WebChatModel from '../../models/WebChatModel/WebChatModel';
 
 export default function WebChat() {
-  const { messages, isChatBoxVisible, chatService } = ChatModel();
+  const { messages, isChatBoxVisible, service: chatService } = WebChatModel({page: 'lqe'});
   const [message, setMessage] = useState("");
   const chatBox = useRef(null);
 
@@ -93,12 +12,11 @@ export default function WebChat() {
   useEffect(onRender, []);
 
   useEffect(() => {
-    if (isChatBoxVisible)
-      chatBox.current.scrollTop = chatBox.current.scrollHeight;
-  }, [messages, isChatBoxVisible]);
+    chatBox.current.scrollTop = chatBox.current.scrollHeight;
+  }, [messages]);
 
   function onRender() {
-    refChatService.current.fetchChatHistory.current().then((messages) => {
+    refChatService.current.fetchChatHistory().then((messages) => {
       refChatService.current.setMessages(messages);
     });
   }
@@ -130,7 +48,7 @@ export default function WebChat() {
   return (
     <div className="lqe-wct">
       <div
-        className={`lqe-wct__main lqe-wct__main__toggle--${
+        className={`lqe-wct__main lqe-wct__toggle--${
           isChatBoxVisible ? "show" : "hide"
         }`}
       >
@@ -145,11 +63,11 @@ export default function WebChat() {
           {messages.map((chat) => (
             <div
               key={chat.id}
-              className={`lqe-wct__main__message-list__message lqe-wct__main__message-list__message${chat.user}`}
+              className={`lqe-wct__main__message-list__message lqe-wct__main__message-list__message${chat.type}`}
             >
               <div className="message__dot"></div>
               <div
-                className={`message__chatbubble message__chatbubble${chat.user}`}
+                className={`message__chatbubble message__chatbubble${chat.type}`}
               >
                 {chat.message}
               </div>
@@ -174,7 +92,7 @@ export default function WebChat() {
         </div>
       </div>
       <div
-        className={`lqe-wct__open-btn lqe-wct__main__toggle--${
+        className={`lqe-wct__open-btn lqe-wct__toggle--${
           isChatBoxVisible ? "hide" : "show"
         }`}
       >
