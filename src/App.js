@@ -7,7 +7,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CentrePanel from "./components/Centre/CentrePanel";
 import WebChat from "./components/WebChat/WebChat";
-import Webchatx from "./components/Webchatx/Webchatx";
 import GlobalErrorPopup from './components/GlobalErrorPopup/GlobalErrorPopup';
 
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -29,11 +28,6 @@ function App() {
         <CentrePanel></CentrePanel>
         <Footer></Footer>
         <WebChat></WebChat>
-        <div className="lqe-wctx-p">
-          <div className="lqe-wctx-s">
-            <Webchatx></Webchatx>
-          </div>
-        </div>
         <div className="lqe-modal-example"></div>
         <div className="lqe-modal-mixin"></div>
         <GlobalErrorPopup  
