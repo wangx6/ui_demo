@@ -20,11 +20,11 @@ describe('render', () => {
   it('should toggle the state of webChat from not visbile to visible', () => {
     expect(webChat.find('.lqe-wct__main').hasClass('lqe-wct__toggle--hide')).toEqual(true);
     expect(webChat.find('.lqe-wct__open-btn').hasClass('lqe-wct__toggle--show')).toEqual(true);
-    // Show WebChat Hide Open Panel
+    // Show WebChat Hide Open Btn
     webChat.find('.lqe-wct__btn_s').simulate('click');
     expect(webChat.find('.lqe-wct__main').hasClass('lqe-wct__toggle--show')).toEqual(true);
     expect(webChat.find('.lqe-wct__open-btn').hasClass('lqe-wct__toggle--hide')).toEqual(true);
-    // Hide WebChat Hide Show Panel
+    // Hide WebChat Show Open Btn
     webChat.find('.lqe-wct__main__hdr__x__icon').last().simulate('click'); 
     expect(webChat.find('.lqe-wct__main').hasClass('lqe-wct__toggle--hide')).toEqual(true);
     expect(webChat.find('.lqe-wct__open-btn').hasClass('lqe-wct__toggle--show')).toEqual(true);
