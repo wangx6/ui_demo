@@ -1,68 +1,76 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from "react";
+import Button from "../Button/Button";
 
-export default function QuoteForm({formRecord, handleSubmit}) {
+export default function QuoteForm({ formRecord, onSubmitQuoteFrom }) {
+  const [record, setRecord] = useState(formRecord.inputs);
 
-    const [record, setRecord] = useState(formRecord.inputs);
-    const [errors, setErrors] = useState(formRecord.errors);
+  console.log(record);
 
-    console.log(record);
-    
-    /*
-        useEffect(() => {
-        setRecord(formRecord);
-        setErrors(errors);
+  const onClickFormSubmit = (event) => {
+    if (onSubmitQuoteFrom && typeof onSubmitQuoteFrom === "function")
+      onSubmitQuoteFrom(record);
+  };
 
-        }, [formRecord, errors]);
-    */
+  const onClickEmailSubmit = (event) => {};
 
-    const onClickFormSubmit = (event) => {
-        console.log(record);
-        if (handleSubmit && typeof handleSubmit === 'function')
-            handleSubmit(record);
-    }
+  const onChangeFirstName = (event) => {
+    console.log(event.target.value);
+    setRecord({ ...record, firstName: event.target.value });
+  };
 
-    const onClickEmailSubmit = (event) => {
+  const onChangeLastName = (event) => {
+    console.log(event.target.value);
+    setRecord({ ...record, lastName: event.target.value });
+  };
 
-    }
+  const onChangeDob = (event) => {
+    console.log(event.target.value);
+    setRecord({ ...record, dob: event.target.value });
+  };
 
-    const onChangeFirstName = (event) => {
-       console.log(event.target.value);
-       setRecord({...record, firstName: event.target.value});
-    }
+  const onChangeTerm = (event) => {
+    console.log(event.target.value);
+    setRecord({ ...record, term: event.target.value });
+  };
 
-    const onChangeLastName = (event) => {
-        console.log(event.target.value);
-        setRecord({...record, lastName: event.target.value});
-     }
+  return (
+    <div>
+      <div>
+        <input
+          onChange={onChangeFirstName}
+          className="form-control"
+          value={record.firstName}
+          placeholder="first name"
+        />
+        <input
+          onChange={onChangeLastName}
+          className="form-control"
+          value={record.lastName}
+          placeholder="last name"
+        />
+        <input
+          onChange={onChangeDob}
+          className="form-control"
+          value={record.dob}
+          placeholder="dob"
+        />
+        <input
+          onChange={onChangeTerm}
+          className="form-control"
+          value={record.term}
+          placeholder="term"
+        />
+        <Button handleClick={onClickFormSubmit} text="Get a Quote Now" />
+      </div>
 
-     const onChangeDob = (event) => {
-        console.log(event.target.value);
-        setRecord({...record, dob: event.target.value});
-     }
-     
-     const onChangeTerm = (event) => {
-        console.log(event.target.value);
-        setRecord({...record, term: event.target.value});
-     }
-
-    return (
-        <div>
-            <div>
-                <input onChange={onChangeFirstName} className="form-control" value={record.firstName}  placeholder="first name" />
-                <input onChange={onChangeLastName} className="form-control" value={record.lastName}  placeholder="last name" />
-                <input onChange={onChangeDob} className="form-control" value={record.dob}  placeholder="dob" />
-                <input onChange={onChangeTerm} className="form-control" value={record.term}  placeholder="term" />
-                <button onClick={onClickFormSubmit}>
-                    Get a Quote Now
-                </button>
-            </div>
-
-            <div>
-                <input className="form-control" defaultValue={record.email}  placeholder="email" />
-                <button onClick={onClickEmailSubmit}>
-                    Send Email
-                </button>
-            </div>
-        </div>
-    )
+      <div>
+        <input
+          className="form-control"
+          defaultValue={record.email}
+          placeholder="email"
+        />
+        <button onClick={onClickEmailSubmit}>Send Email</button>
+      </div>
+    </div>
+  );
 }
