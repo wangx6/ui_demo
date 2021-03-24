@@ -56,7 +56,7 @@ export default function WebChat() {
 
   return (
     <div className="lqe-wct">
-      <div className={`lqe-wct__main lqe-wct__main__toggle--${isChatBoxVisible ? "show" : "hide"}`}>
+      <div className={`lqe-wct__main lqe-wct__toggle--${isChatBoxVisible ? "show" : "hide"}`}>
         <div className="lqe-wct__main__hdr">
           <p className="lqe-wct__main__hdr__text__s">How may I help you?
           </p>
@@ -76,7 +76,7 @@ export default function WebChat() {
           <input 
             onChange={onChangeMessage} 
             onKeyUp={onKeyUpInput} value={message}
-            className="lqe-wct__message__input lqe-wct__message__input_s" 
+            className="lqe-wct__message__input lqe-wct__message__input__s" 
             value={message}  
             placeholder="Enter your message" 
           />
@@ -85,7 +85,7 @@ export default function WebChat() {
           </button>
         </div>
       </div>
-      <div className={`lqe-wct__open-btn lqe-wct__main__toggle--${isChatBoxVisible ? "hide" : "show"}`}>
+      <div className={`lqe-wct__open-btn lqe-wct__toggle--${isChatBoxVisible ? "hide" : "show"}`}>
         <p className="lqe-wct__btn_s" onClick={onClickToggleChatBox}>
           Chat with us
         </p>
