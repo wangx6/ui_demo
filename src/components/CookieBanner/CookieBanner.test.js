@@ -15,9 +15,6 @@ describe('feature', () => {
 
   it('should hide cookie banner', () => {
     const wrapper = mount(<CookieBanner><CgClose></CgClose></CookieBanner>);
-    /*console.log(wrapper.html());
-    console.log(wrapper.debug());
-    console.log(wrapper.find('.util-cookie-banner-container-hdr').find('.util-cookie-banner__cookie-icon-hide').at(1).html());*/
     expect(wrapper.exists('.util-cookie-banner-container--show')).toEqual(false);
     expect(wrapper.exists('.util-cookie-banner-container--hide')).toEqual(true);
     wrapper.find('.util-cookie-banner__cookie-icon-show').simulate('click');
