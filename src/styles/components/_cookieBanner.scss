@@ -14,13 +14,13 @@
   font-size: 16px;
   z-index: 1001;
 
-  &--show {
+  &--visible {
     display: flex;
     transition: transform 0.4s;
     transform: translate(0%);
   }
 
-  &--hide {
+  &--invisible {
     display: none;
   }
 
@@ -44,11 +44,11 @@
   @include modal;
 }
   
-.util-cookie-banner__modal.hide{
+.util-cookie-banner__modal.invisible{
   opacity: 0;
   transform: translate(100%);
 }
-.util-cookie-banner__modal.show{
+.util-cookie-banner__modal.visible {
   opacity: 1;
   transform: translate(0%);
 }
