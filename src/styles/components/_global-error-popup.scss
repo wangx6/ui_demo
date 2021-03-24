@@ -1,0 +1,56 @@
+.lqe-global-notification-popup {
+  &.ok &__title{
+    color: green;
+  }
+  &.error &__title{
+    color: red;
+  }
+  &.warn &__title{
+    color: orange;
+  }
+
+  &__modal {
+    position: fixed;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    background-color: $black-transparent;
+    z-index: 1001;
+  }
+
+  &__dialog {
+    position: fixed;
+    width: 60%;
+    min-height: 300px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    z-index: 2001
+  }
+
+  &__content {
+    border-radius: 10px;
+    position: relative;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    outline: 0;
+
+    .lqe-global-notification-popup__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 62px 81px;
+
+      .lqe-global-notification-popup__title {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

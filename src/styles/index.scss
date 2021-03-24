@@ -6,10 +6,12 @@
 @import "./components/button.scss";
 @import "./components/header.scss";
 @import "./components/text-input.scss";
+@import "./components/cookie-banner.scss";
 
 // modules
 @import "./components/webchat.scss";
 @import "./components/webchatx.scss";
+@import "./components/menuheader.scss";
+@import "./components/global-error-popup.scss";
 
 // pages
-@import "./pages/login.scss";

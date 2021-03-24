@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Button = (props) => {
-
-    return ( 
+  return (
     <button className="lqe-button__primary" onClick={props.handleClick}>
-    {props.text}
-    </button> );
-}
- 
+      {props.text}
+    </button>
+  );
+};
+
 export default Button;
