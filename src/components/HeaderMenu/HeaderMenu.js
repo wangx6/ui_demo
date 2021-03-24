@@ -1,22 +1,34 @@
 import React from 'react'
-import './HeaderMenu.css';
+
+const titles = [
+  { value: 'Health', label: 'menuHealth' },
+  { value: 'Travel', label: 'menuTravel' },
+  { value: 'Dental', label: 'menuDental' },
+  { value: 'Life', label: 'menuLife' },
+  { value: 'Swift Care', label: 'menuSwiftCare' },
+  { value: 'Claims', label: 'menuClaims' },
+  { value: 'Members', label: 'menuMembers' },
+  { value: 'Employers', label: 'menuEmployers' },
+  { value: 'Blog', label: 'menuBlog' },
+]
+
+const onClickTitle = (title) => {
+  console.log(title);
+}
 
 export default function HeaderMenu() {
-    return (
-        <div className="lqe-hdr-menu">
-            <div className="container navbar-container">
-				<ul className="nav navbar-nav">
-					<li id="menuHealth" className="navbar-li">Health</li>
-					<li id="menuTravel" className="navbar-li">Travel</li>
-					<li id="menuDental" className="navbar-li">Dental</li>
-					<li id="menuLife" className="navbar-li">Life</li>
-					<li id="menuSwiftCarNamee" className="navbar-li">Swiftcare</li>
-					<li id="menuClaims" className="navbar-li">Claims</li>
-					<li id="menuMembers" className="navbar-li">Members</li>
-					<li id="menuEmployers" className="navbar-li">Employers</li>
-					<li id="menuBlog" className="navbar-li">Blog</li>
-				</ul>
-			</div>
+  return (
+    <div className="lqe-hdr-menu">
+      <div className="lqe-hdr-menu__ctr">
+        <div className="lqe-hdr-menu__title-list">
+          {titles.map(title => <div key={title.value}
+            onClick={(event) => { onClickTitle(title) }}
+            className="lqe-hdr-menu__title-item">
+            {title.value}
+          </div>)
+          }
         </div>
-    )
+      </div>
+    </div>
+  )
 }

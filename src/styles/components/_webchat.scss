@@ -1,0 +1,131 @@
+@import "../common/global";
+
+.lqe-wct{
+  $box-width: 400px;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  bottom: 20px;
+  box-shadow: 5px 5px 20px $white;
+
+  &__toggle--show{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__toggle--hide{
+    display: none;
+  }
+
+  &__main__hdr{
+    display: flex;
+  }
+
+  &__main__hdr__text__s,
+  &__btn_s{
+    padding: 40px;
+  }
+
+  &__main__hdr,
+  &__open-btn{
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 40px;
+    background-color: $primary-color;
+  }
+
+  &__main__message-list,
+  &__main__hdr,
+  &__open-btn,
+  &__message__input__wrap{
+    width: $box-width;
+    padding: 20px;
+    color: $white;
+  }
+
+  &__main__message-list{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: auto;
+    background-color: $m-l-grey;
+
+    &__message {
+      display: flex;
+      .message__chatbubble{
+        border: none;
+        border-radius: 8px;
+        padding: 15px;
+        width: 170px;
+        min-height: 10px;
+        max-height: fit-content;
+        margin: 15px 7px 15px 7px;
+        overflow-wrap: anywhere;
+        font-size: 11px;
+        text-align: left;
+      }
+      .message__dot{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        margin-top: 17px;
+        background-color: $x-d-grey;
+      }
+    } 
+
+    &__messagea{
+      align-self: flex-start;
+      flex-direction: row;
+      .message__chatbubblea{
+        background: $m-d-grey;
+        color: $black;
+      }
+    }
+
+    &__messageb{
+      align-self: flex-end;
+      flex-direction: row-reverse;
+      .message__chatbubbleb{
+        display: flex;
+        align-items: center;
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  &__message__input__wrap{
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: $m-l-grey;
+
+    .lqe-wct__message__input,
+    .lqe-wct__message__submit-btn{
+      border: 0px none;
+      height: 40px;
+      margin: 7px;
+    }
+
+    .lqe-wct__message__input{
+      width: 270px;
+    }
+
+    .lqe-wct__message__input__s{
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .lqe-wct__message__submit-btn{
+      width: 40px;
+    }
+
+    .lqe-wct__message__cursor{
+      color: $x-d-grey;
+    }
+  }
+}
