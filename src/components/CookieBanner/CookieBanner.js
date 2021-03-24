@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { CgClose } from "react-icons/cg";
-//import './CookieBanner.css';
 import CookieIcon from '../../img/cookieIcon.png'
 import VhiLogo from '../../img/cookieVhiLogo.png'
 
