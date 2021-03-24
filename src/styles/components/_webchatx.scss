@@ -1,0 +1,23 @@
+.lqe-wctx {
+    $box-width: 300px;
+    $box-height: 300px;
+
+    position: relative;
+    &__main {
+        width: $box-width;
+        @include tablet-view() {
+            width: 80%;
+        }
+        @include desktop-view() {
+            width: 100%;
+        }
+        height: $box-height;
+        background-color: $base;
+    }
+    &__trigger-btn {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: $box-width;
+    }
+}
