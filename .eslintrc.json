@@ -17,8 +17,8 @@
     "plugins": [
         "react"
     ],
+    "ignorePatterns": ["*.test.js", "**/vendor/*.js"],
     "rules": {
-        "ignorePatterns": ["*.test.js", "**/vendor/*.js"],
-        "indent": ["error", 2]
+        "indent": ["warn", 2]
     }
 }
