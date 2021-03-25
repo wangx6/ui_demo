@@ -22,7 +22,7 @@ export default function HeaderMenu() {
       <div className="lqe-hdr-menu__ctr">
         <div className="lqe-hdr-menu__title-list">
           {titles.map(title => <div key={title.value}
-            onClick={(event) => { onClickTitle(title) }}
+            onClick={() => { onClickTitle(title) }}
             className="lqe-hdr-menu__title-item">
             {title.value}
           </div>)

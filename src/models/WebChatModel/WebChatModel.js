@@ -4,7 +4,7 @@ function WebChatModel({ page }) {
   // STATE SPACE
   const allowedPages = ["lqe"];
   const [messages, setMessages] = useState([]);
-  const [isChatBoxAvailable, setIsChatBoxAvailable] = useState(false);
+  // const [isChatBoxAvailable, setIsChatBoxAvailable] = useState(false);
   const [isChatBoxVisible, setIsChatBoxVisible] = useState(false);
   const [isAgentAvailable] = useState(false);
   const [hasChatHistory] = useState(false);
@@ -34,7 +34,7 @@ function WebChatModel({ page }) {
   }
 
   function fetchChatHistory() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const messages = mockServer();
       resolve(messages);
     });

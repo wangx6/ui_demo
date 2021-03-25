@@ -19,6 +19,6 @@
     ],
     "ignorePatterns": ["*.test.js", "**/vendor/*.js"],
     "rules": {
-        "indent": ["warn", 2]
+        "indent": ["error", 2]
     }
 }
