@@ -12,6 +12,7 @@ import GlobalErrorPopup from './components/GlobalErrorPopup/GlobalErrorPopup';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import Success from './components/Result/Success';
 import Failure from './components/Result/Failure';
+
 // models
 import NotificationModel from "./models/NotificationModel/NotificationModel"
 
@@ -27,6 +28,7 @@ function App() {
         <Header></Header>
         <CentrePanel></CentrePanel>
         <Footer></Footer>
+        
         <WebChat></WebChat>
         <div className="lqe-modal-example"></div>
         <div className="lqe-modal-mixin"></div>
