@@ -28,7 +28,6 @@ function App() {
         <Header></Header>
         <CentrePanel></CentrePanel>
         <Footer></Footer>
-        
         <WebChat></WebChat>
         <div className="lqe-modal-example"></div>
         <div className="lqe-modal-mixin"></div>
