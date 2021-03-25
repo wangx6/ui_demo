@@ -80,7 +80,6 @@ export default function WebChat() {
             onKeyUp={onKeyUpInput}
             value={message}
             className="lqe-wct__message__input lqe-wct__message__input_s"
-            value={message}
             placeholder="Enter your message"
           />
           <button

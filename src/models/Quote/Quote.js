@@ -1,47 +1,49 @@
-import axios from 'axios';
+import axios from "axios";
 
 function Quote() {
+  const formRecord = {
+    inputs: {
+      firstName: "Kevin",
+      lastName: "Doyle",
+      dob: "15/12/1974",
+      term: "20",
+      email: "kevin@test.com",
+    },
+    errors: {},
+  };
 
-    const formRecord = {
-        inputs: { 
-            firstName: 'Kevin',
-            lastName: 'Doyle',
-            dob: '15/12/1974',
-            term: '20',
-            email: 'kevin@test.com'
-        },
-        errors: {
+  // power
+  function getFormRecord() {
+    return formRecord;
+  }
 
-        }
-    }
+  function setFormRecord(record) {
+    formRecord.inputs = Object.assign({}, record);
+  }
 
+  async function submitQuote() {
+    console.log(formRecord.inputs);
+    const result = await axios.post(
+      "http://localhost:8080/quote",
+      formRecord.inputs
+    );
+    console.log(result);
+    return result;
+  }
 
-    // power
-    function getFormRecord() {
-        return formRecord;
-    }
+  async function sendEmail() {
+    console.log(formRecord.inputs.email);
+    const result = await axios.post(
+      "http://localhost:8080/quote",
+      formRecord.inputs.email
+    );
+    console.log(result);
+    return result;
+  }
 
-    function setFormRecord(record) {
-        formRecord.inputs = Object.assign({}, record);
-    }
+  // call api
 
-    async function submitQuote() {
-        console.log(formRecord.inputs);
-        const result = await axios.post('http://localhost:8080/quote', formRecord.inputs);
-        console.log(result);
-        return result;
-    }
-
-    async function sendEmail() {
-      console.log(formRecord.inputs.email);
-      const result = await axios.post('http://localhost:8080/quote', formRecord.inputs.email);
-        console.log(result);
-        return result;
-    }
-
-    // call api
-
-    return {submitQuote, sendEmail, getFormRecord, setFormRecord};
+  return { submitQuote, sendEmail, getFormRecord, setFormRecord };
 }
 
 export default Quote;
