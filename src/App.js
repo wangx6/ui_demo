@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import CentrePanel from "./components/Centre/CentrePanel";
 import WebChat from "./components/WebChat/WebChat";
 import GlobalErrorPopup from "./components/GlobalErrorPopup/GlobalErrorPopup";
+import CookieBanner from "./components/CookieBanner/CookieBanner";
 
 // models
 import NotificationModel from "./models/NotificationModel/NotificationModel";
@@ -28,6 +29,7 @@ function App() {
         <Footer></Footer>
 
         <WebChat></WebChat>
+        <CookieBanner></CookieBanner>
         <div className="lqe-modal-example"></div>
         <div className="lqe-modal-mixin"></div>
         <GlobalErrorPopup
